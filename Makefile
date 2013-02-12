@@ -43,7 +43,7 @@ all: $(STAMPFILES)
 clean:
 	$(foreach tex,$(TEXFILES),rubber --pdf --clean $(tex);)
 	@rm -fv $(CLEANFILES)
-	@rm -fv *~ \#*\# *.stamp *.hst *.ver *.4ct *.4tc *.css \
+	@rm -fv *~ *~[0-9+] \#*\# *.stamp *.hst *.ver *.4ct *.4tc *.css \
 	        *.dvi *.html *.idv *.lg *.tmp *.xref texput.log
 
 .PHONY: all clean
