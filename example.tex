@@ -1,0 +1,120 @@
+% Example document for LaTeX projects
+%
+% Copyright (c) 2007-2013 Fabian Fagerholm
+%
+% Copying and distribution of this file, with or without modification,
+% are permitted in any medium without royalty provided the copyright
+% notice and this notice are preserved. This file is offered as-is,
+% without any warranty.
+
+\documentclass{article}
+
+\usepackage[hyphens]{url}
+\usepackage[pdftex]{thumbpdf}
+\usepackage[
+    bookmarks=true,bookmarksnumbered=true,hypertexnames=false,
+    breaklinks=true,linkbordercolor={1 1 1},pdfborder={0 0 0}]{hyperref}
+\hypersetup{
+    pdfauthor={Fabian Fagerholm},
+    pdftitle={Example Document},
+    pdfsubject={LaTeX example},
+    pdfkeywords={LaTeX, example}
+}
+\pdfadjustspacing=1
+\clubpenalty=10000
+\widowpenalty = 10000
+
+\synctex=1
+
+\usepackage[utf8]{inputenc}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{paralist}
+\let\labelindent\relax
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shadows}
+\usetikzlibrary{patterns}
+\usepackage{microtype}
+
+\begin{document}
+
+\title{Example Document}
+\author{Fabian Fagerholm}
+
+\maketitle
+
+\begin{abstract}
+This document is an example template for \LaTeX{} projects. It shows how to do some basic formatting of text, tables, and figures. You should modify it according to your needs.
+\end{abstract}
+
+%%%%% REMOVE %%%%%
+
+\section{Introduction}
+\label{sec:introduction}
+
+\LaTeX{} users often collect their favourite code snippets in an example document from which they can easily copy them into actual documents. This is mine.
+
+\section{Using this document}
+
+You can use this document as follows:
+\begin{itemize}
+    \item Rename it to a name of your choosing.
+    \item Change the following:
+    \begin{itemize}
+        \item pdfauthor
+        \item pdftitle
+        \item pdfsubject
+        \item pdfkeywords
+        \item title
+        \item author
+    \end{itemize}
+    \item Remove the text between the ``\%\%\%\%\% REMOVE \%\%\%\%\%'' markers.
+    \item Change the document class if needed.
+    \item Change or remove the abstract as needed.
+    \item Make any necessary adjustments that the document class requires.
+\end{itemize}
+You should now have a clean document which you can use for your own needs.
+
+\subsection{Tables}
+
+To make a nicely formatted table, use the following code:
+
+\begin{verbatim}
+\begin{table}
+\caption{Example table}
+\label{tab:exampletable}
+\centering
+\begin{tabular}{rrr}
+\toprule
+
+A & B & C \\
+\midrule
+
+1 & 44 & 67 \\
+56 & 19 & 8 \\
+104 & 3 & 42 \\
+
+\bottomrule
+\end{tabular}
+\end{table}
+\end{verbatim}
+
+\subsection{Figures}
+
+To include a figure, use the following code:
+\begin{verbatim}
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{filename}
+\end{center}
+\caption{Example caption.}
+\label{fig:examplefigure}
+\end{figure}
+\end{verbatim}
+
+%%%%% REMOVE %%%%%
+
+\end{document}
