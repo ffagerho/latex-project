@@ -36,7 +36,7 @@ SVGFILES := $(wildcard *.svg)
 DIAFILES := $(wildcard *.dia)
 
 STAMPFILES=$(SVGFILES:.svg=.svg.stamp) $(DIAFILES:.dia=.dia.stamp) $(TEXFILES:.tex=.tex.stamp)
-CLEANFILES=$(STAMPFILES) $(SVGFILES:.svg=.pdf) $(DIAFILES:.dia=.pdf) $(TEXFILES:.tex=.pdf)
+CLEANFILES=$(STAMPFILES) $(SVGFILES:.svg=.pdf) $(DIAFILES:.dia=.pdf) $(TEXFILES:.tex=.pdf) $(TEXFILES:.tex=.synctex.gz)
 
 all: $(STAMPFILES)
 
