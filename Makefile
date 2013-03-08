@@ -36,9 +36,18 @@ SVGFILES := $(wildcard *.svg)
 DIAFILES := $(wildcard *.dia)
 
 STAMPFILES=$(SVGFILES:.svg=.svg.stamp) $(DIAFILES:.dia=.dia.stamp) $(TEXFILES:.tex=.tex.stamp)
-CLEANFILES=$(STAMPFILES) $(SVGFILES:.svg=.pdf) $(DIAFILES:.dia=.pdf) $(TEXFILES:.tex=.pdf) $(TEXFILES:.tex=.synctex.gz)
+CLEANFILES=$(STAMPFILES) $(SVGFILES:.svg=.pdf) $(DIAFILES:.dia=.pdf) $(TEXFILES:.tex=.pdf) $(TEXFILES:.tex=.synctex.gz) $(shell basename $(CURDIR)).zip $(shell basename $(CURDIR)).tar.xz
 
 all: $(STAMPFILES)
+
+zip: PROJDIR=$(shell basename $(CURDIR))
+zip:
+	git archive --prefix=$(PROJDIR)/ --output=$(PROJDIR).zip -9 `git stash create`
+
+txz: PROJDIR=$(shell basename $(CURDIR))
+txz:
+	git archive --prefix=$(PROJDIR)/ --output=$(PROJDIR).tar `git stash create`
+	@xz $(PROJDIR).tar
 
 clean:
 	$(foreach tex,$(TEXFILES),rubber --pdf --clean $(tex);)
