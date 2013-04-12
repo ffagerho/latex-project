@@ -36,7 +36,7 @@ SVGFILES := $(wildcard *.svg)
 DIAFILES := $(wildcard *.dia)
 
 STAMPFILES=$(SVGFILES:.svg=.svg.stamp) $(DIAFILES:.dia=.dia.stamp) $(TEXFILES:.tex=.tex.stamp)
-CLEANFILES=$(STAMPFILES) $(SVGFILES:.svg=.pdf) $(DIAFILES:.dia=.pdf) $(TEXFILES:.tex=.pdf) $(TEXFILES:.tex=.synctex.gz) $(shell basename $(CURDIR)).zip $(shell basename $(CURDIR)).tar.xz
+CLEANFILES=$(STAMPFILES) $(SVGFILES:.svg=.pdf) $(DIAFILES:.dia=.pdf) $(TEXFILES:.tex=.pdf) $(TEXFILES:.tex=.synctex.gz) $(TEXFILES:.tex=.out) $(shell basename $(CURDIR)).zip $(shell basename $(CURDIR)).tar.xz
 
 all: $(STAMPFILES)
 
