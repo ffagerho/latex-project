@@ -42,7 +42,7 @@ all: $(STAMPFILES)
 
 zip: PROJDIR=$(shell basename $(CURDIR))
 zip:
-	git diff-index --exit-code --quiet HEAD; \
+	@git diff-index --exit-code --quiet HEAD; \
 	if [ $$? -eq 0 ]; then TREEISH="HEAD"; else TREEISH=`git stash create`; fi ; \
 	TIMESTAMP=`date +%M%m%d%H%M%S`; \
 	git archive --prefix=$(PROJDIR)/ --output=$(PROJDIR)-$$TIMESTAMP.zip -9 $$TREEISH
