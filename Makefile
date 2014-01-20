@@ -80,6 +80,6 @@ html: $(TEXFILES)
 # Target to compile Dia into PDF
 %.dia.stamp: %.dia
 	dia --nosplash --filter=eps --export=$(subst .dia.stamp,.eps,$@) $<
-	epstopdf -.stampfile=$(EPS) $<
+	epstopdf $(subst .dia.stamp,.eps,$@) --outfile=$<
 	@touch $@
 
